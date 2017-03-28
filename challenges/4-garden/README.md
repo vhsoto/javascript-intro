@@ -1,4 +1,4 @@
-#Object Oriented programing in Javascript.
+# Object Oriented programing in Javascript.
 
 ## Conceptos a Aprender
 - Creación de Funciones Constructoras
@@ -14,6 +14,6 @@ En este reto vamos a practicar un poco la creación de objetos ya sean objetos l
 
 Abre el archivo `garden/index.html` en el navegador. Si miras tu consola de desarrollador encontraras que esta mostrando un error. Solucionalo.
 
-##Paso 1: Soluciona el resto de errores
+## Paso 1: Soluciona el resto de errores
 
 Continua solucionando todos los errores que te aparezcan en la consola hasta que llegues al mensaje: `Todas las Pruebas Pasan Felicitaciones!!!`

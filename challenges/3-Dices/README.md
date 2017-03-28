@@ -1,12 +1,12 @@
 # JavaScript Refactor Procesal A OOP
 
-##Resumen
+## Resumen
 
 Como programador profesional, habrán varias situaciones en las que te encontraras con javascript escrito de forma un poco miedosa. En este reto te vamos a pedir que tomes código escrito en forma procesal, y le hagas un refactor para que se convierta en código escrito de forma orientada a Objetos.
 
-##Pasos
+## Pasos
 
-###Paso 0 :
+### Paso 0 :
 
 Haz un refactor del código en el archivo `application.js`. Esfuérzate por dejar lo mínimo posible en el `global scope`.
 
@@ -17,7 +17,7 @@ Tips:
 - Cada `event handler` no debe de tener mas de 2 lineas de longitud
 - Crea una clara separación de responsabilidades
 
-###Release 1 : Version MVC
+### Paso 1 : Version MVC
 
 Ahora que tenemos las funciones desacopladas, podemos organizar nuestro código en comportamientos.
 
