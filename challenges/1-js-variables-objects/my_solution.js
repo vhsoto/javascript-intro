@@ -6,8 +6,9 @@
 // Escribe tu codigo aca.
 
 
+console.log('Yeahh')
 
-
+var secretNumber = 5
 
 
 

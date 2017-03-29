@@ -7,7 +7,6 @@
 
 
 
-
 // 1. Añadir propiedades a objetos
 
 
@@ -29,3 +28,9 @@
 
 
 // 5. Reflexion
+
+
+/////// Pruebas //////////
+var michaelPhelps = new Athlete("Michael Phelps", 29, "swimming")
+console.log(michaelPhelps.constructor === Athlete)
+console.log((michaelPhelps.name + " " + michaelPhelps.sport + " " + michaelPhelps.age) === 'Michael Phelps swimming 29')
