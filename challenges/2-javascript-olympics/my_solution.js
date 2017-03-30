@@ -22,12 +22,12 @@ a2 = {
 
 var name = 'juan'
 
-// Function expresssion
+// Function Declaration
 function name() {
 
 }
 
-// Function Declaration
+// Function Expresssion
 var name = function() {
   console.o
 }
