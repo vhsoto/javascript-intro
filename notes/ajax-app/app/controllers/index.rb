@@ -25,11 +25,17 @@ delete '/posts/:id' do
 end
 
 post '/posts' do
-  Post.create( title: params[:title],
+  post = Post.new( title: params["title"],
                username: Faker::Internet.user_name,
                comment_count: rand(1000) )
-  redirect '/posts'
+  if post.save
+    erb :"_post", layout: false, locals: {post: post}
+  else
+    content_type :json
+    {error: post.errors.full_messages}.to_json
+  end
 end
+
 
 get '/post/:id' do
   @post = Post.find(params[:id])

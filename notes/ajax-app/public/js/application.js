@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-  $('.vote-button').on('click', function(e){
+  // Event listeners
+  $('.post-container').on('click', '.vote-button', function(e){
     // 1.Fresco yo estoy a cargo
     console.log('Estoy a cargo')
     e.preventDefault()
@@ -30,6 +31,36 @@ $(document).ready(function() {
       console.log(response)
       $('.post-container').html(JSON.parse(response.responseText).valor)
     })
+
+  })
+
+
+
+  // Event listener
+  $('form').on('submit', function(e){
+    e.preventDefault()
+
+    //Sacar la informacion
+    var formData = $(this).serialize()
+    // var title = $(this).find('input[name="title"]').val()
+    var url = this.action
+    //Ajax
+
+    $.ajax({
+      method: 'POST',
+      url: url,
+      data: formData
+    }).done(function(response) {
+      // Actualizar el DOM
+      console.log('cuandooo??')
+      // console.log(response)
+      $('.post-container').append(response)
+      // $('.post-container').append(
+      //   `<article id='${response.post.id}'><a href='/posts/${response.post.id}/vote' class="fa fa-sort-desc vote-button"></a><h2><a href='/posts/${response.id}'>${response.post.title}</a></h2><p><span class="points">0</span><span class="username">${response.post.username}</span><span class="timestamp">0</span><span class="comment-count">${response.post.comment_count}</span><a class="delete" href='/posts/${response.post.id}'></a></p></article>`
+      // )
+    })
+
+    console.log('Que???')
 
   })
 
