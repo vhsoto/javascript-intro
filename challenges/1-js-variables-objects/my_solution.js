@@ -6,13 +6,6 @@
 // Escribe tu codigo aca.
 
 
-console.log('Yeahh')
-
-var secretNumber = 5
-
-
-
-
 // __________________________________________
 // Refleccion: Escribe una refleccion aca sobre lo que aprendiste.
 //
