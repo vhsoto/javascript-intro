@@ -11,7 +11,6 @@
 
 <div class='post-container'>
   <% @posts.each do |post| %>
-
     <article id="<%= post.id %>">
       <a href='/posts/<%= post.id %>/vote' class="fa fa-sort-desc vote-button"></a>
       <h2><a href='/posts/<%= post.id %>'><%= post.title %></a></h2>
@@ -23,7 +22,6 @@
         <a class="delete" href='/posts/<%= post.id %>'></a>
       </p>
     </article>
-
   <% end %>
 </div>
 
