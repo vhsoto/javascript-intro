@@ -15,7 +15,25 @@
   <% end %>
 </div>
 
+
+
 <form id="posts" method="post" action="/posts">
   <input type="text" name="title" placeholder="title">
+  <input type="text" name="author" placeholder="title">
+  <input type="text" name="content" placeholder="title">
   <input type="submit" value="submit new post">
 </form>
+
+<script id="post-template" type="text/x-handlebars-template">
+  <article id="{{ post.id}}">
+    <a href='/posts"{{ post.id }}"vote' class="fa fa-sort-desc vote-button"></a>
+    <h2><a href='/posts"{{ post.id }}"><%= post.title %></a></h2>
+    <p>
+      <span class='points'><%= post.votes.sum(:value) %></span>
+      <span class='username'><%= post.username %></span>
+      <span class='timestamp'><%= post.time_since_creation %></span>
+      <span class='comment-count'><%= post.comment_count %></span>
+      <a class="delete" href='/posts"{{ post.id }}"></a>
+    </p>
+  </article>
+</script>

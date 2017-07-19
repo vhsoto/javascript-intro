@@ -20,14 +20,14 @@ delete '/posts/:id' do
 end
 
 post '/posts' do
-  p '*' * 50
-  p params
   @post = Post.new( title: params["title"],
                username: Faker::Internet.user_name,
                comment_count: rand(1000) )
   if @post.save
-    erb :"_post",layout: false, locals: {post: @post}
+    status 201
+    erb :"_post", layout: false, locals: {post: @post}
   else
+    status 400
     @error = post.errors.full_messages
     erb :index
   end

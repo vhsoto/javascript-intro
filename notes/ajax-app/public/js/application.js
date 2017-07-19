@@ -8,18 +8,31 @@ $(document).ready(function() {
     // Sacar la informacion
     var url = this.action
     var title = this.title.value
-        // var formData = $(this).serialize()
-        // var title = $(this).find('input[name="title"]').val()
-        //Ajax
+
+    // <form id="posts" method="post" action="/posts">
+    //   <input type="text" name="title" placeholder="title">
+    //   <input type="text" name="author" placeholder="title">
+    //   <input type="text" name="content" placeholder="title">
+    //   <input type="submit" value="submit new post">
+    // </form>
+
+    var formData = $(this).serialize()
+
+    // var title = $(this).find('input[name="title"]').val()
+    //Ajax
     // Voy a hacer el request
+
      $.ajax({
         method: 'POST',
         url: this.action,
-        data: {
-          title: title
-        }
-     }).done(function(response) {
-        $('.post-container').append(response)
+        data: formData
+     }).done(function(context) {
+        var source = $('#post-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(context)
+        $('.post-container').append(html)
+     }).fail(function(response) {
+        console.log('Estoy en el fail')
      })
 
   })
@@ -137,12 +150,10 @@ $(document).ready(function() {
         `<article id='${response.post.id}'><a href='/posts/${response.post.id}/vote' class="fa fa-sort-desc vote-button"></a><h2><a href='/posts/${response.id}'>${response.post.title}</a></h2><p><span class="points">0</span><span class="username">${response.post.username}</span><span class="timestamp">0</span><span class="comment-count">${response.post.comment_count}</span><a class="delete" href='/posts/${response.post.id}'></a></p></article>`
       )
     })
-
     console.log('Que???')
-
   })
-
 });
+
 
 
 
