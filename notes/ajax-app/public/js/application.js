@@ -26,11 +26,12 @@ $(document).ready(function() {
         method: 'POST',
         url: this.action,
         data: formData
-     }).done(function(context) {
-        var source = $('#post-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(context)
-        $('.post-container').append(html)
+     }).done(function(response) {
+        // var source = $('#post-template').html()
+        // var template = Handlebars.compile(source)
+        // var html = template(context)
+        // $('.post-container').append(html)
+        $(`a[href=/post/${response.id}/votes]`).remove()
      }).fail(function(response) {
         console.log('Estoy en el fail')
      })

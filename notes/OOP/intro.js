@@ -35,16 +35,17 @@ function Animal(name) {
   this.name = name
 }
 
-Animal.prototype.speak = function () {
-  console.log(`Hola soy ${this.name}`)
-};
-
 function Mammal(name) {
-  Animal.call(this, name) // super(name)
+  Animal.call(this, name)
   this.drinkMilk = true
 }
 
 Mammal.prototype = Object.create(Animal.prototype)
+
+Animal.prototype.speak = function () {
+  console.log(`Hola soy ${this.name}`)
+};
+
 
 Mammal.prototype.muu = function() {
   console.log('Muuuuu')

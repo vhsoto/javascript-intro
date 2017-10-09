@@ -13,23 +13,3 @@ $(document).ready(function() {  // Codigo Procedural Procedimental --> OOP
   })
 })
 
-
-function Die () {
-
-}
-
-function View() {
-
-}
-
-
-function Controller(model, view) {
-  this.view = view
-  this.model = model
-}
-
-
-
-
-
-var controller = new Controller(new Die(), new View())
