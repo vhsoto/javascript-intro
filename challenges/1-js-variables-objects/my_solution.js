@@ -4,7 +4,14 @@
 
 // __________________________________________
 // Escribe tu codigo aca.
-
+  var secretNumber = 1
+  var secretNumber = 7
+  var password = "Hola"
+  var password = "just open the door"
+  var allowedIn = true
+  var allowedIn = false
+  var members = []
+  var members = ["Juan", "f", "e", "German"]
 
 // __________________________________________
 // Refleccion: Escribe una refleccion aca sobre lo que aprendiste.
